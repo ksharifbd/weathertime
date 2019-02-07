@@ -1,0 +1,22 @@
+{
+  "name": "weathertime",
+  "version": "0.1.0",
+  "description": "A Node program which returns current time and weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksharifbd/weathertime.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Kamal Sharif",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksharifbd/weathertime/issues"
+  },
+  "homepage": "https://github.com/ksharifbd/weathertime#readme"
+}
