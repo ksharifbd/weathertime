@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ksharifbd/weathertime/issues"
   },
-  "homepage": "https://github.com/ksharifbd/weathertime#readme"
+  "homepage": "https://github.com/ksharifbd/weathertime#readme",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  }
 }
