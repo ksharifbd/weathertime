@@ -1,8 +1,7 @@
 const fetch = require('isomorphic-fetch');
-const {WEATHER_API_KEY} = require('./credentials.json');
 
-async function fetchWeather(location) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${WEATHER_API_KEY}`;
+async function fetchWeather(apiKey, location) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
 
     try {
         const response = await fetch(url);
