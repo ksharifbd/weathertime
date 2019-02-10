@@ -10,12 +10,12 @@ args.forEach(async argument => {
 
     const timeData = await time(lat, lon);
 
-    const result = {
+    const output = {
         name: weatherData.name,
         weather: weatherData.weather[0].main,
         description: weatherData.weather[0].description,
         time: timeData.formatted,
     };
 
-    console.log('\n', result);
+    console.log('\n', output);
 });
