@@ -5,13 +5,16 @@ const args = process.argv.slice(2);
 
 args.forEach(async argument => {
     const weatherData = await weather(argument);
-    const timeeData = await time(weatherData.name);
+
+    const {lat, lon} = weatherData.coord;
+
+    const timeData = await time(lat, lon);
 
     const result = {
         name: weatherData.name,
         weather: weatherData.weather[0].main,
         description: weatherData.weather[0].description,
-        time: timeeData.time,
+        time: timeData.formatted,
     };
 
     console.log('\n', result);
