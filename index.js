@@ -28,7 +28,9 @@ const storeApiKey = command => {
 
 const showMissingArgMessage = command => {
     if(!commander[command]) {
-        console.log(`Please provide api key for ${apiKey[command][0]} using --${command}`);
+        console.log(`Please provide api key for ${apiKey[command][0]} using --${command}`,'\nSee here -> https://github.com/ksharifbd/weathertime#how-to-get-the-api-keys');
+
+        process.exit(1);
     }
 }
 
