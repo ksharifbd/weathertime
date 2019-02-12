@@ -1,16 +1,14 @@
-const fetch = require('isomorphic-fetch');
+const {flow} = require('lodash');
 
-async function fetchTime(apiKey, lat, lon) {
-    const url = `http://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lon}`;
+const fetcher = require('./fetcher');
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        return data;
-    } catch(err) {
-        return err;
-    }
+function constructApiUrl(apiKey, lat, lon) {
+    return `http://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lon}`;
 }
+
+const fetchTime = flow([
+    constructApiUrl,
+    fetcher,
+]);
 
 module.exports = fetchTime;

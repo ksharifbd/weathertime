@@ -1,16 +1,14 @@
-const fetch = require('isomorphic-fetch');
+const {flow} = require('lodash');
 
-async function fetchWeather(apiKey, location) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
+const fetcher = require('./fetcher');
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        return data;
-    } catch(err) {
-        return err;
-    }
+function constructApiUrl(apiKey, location) {
+    return `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
 }
+
+const fetchWeather = flow([
+    constructApiUrl,
+    fetcher,
+]);
 
 module.exports = fetchWeather;
