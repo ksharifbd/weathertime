@@ -1,4 +1,4 @@
-## weathertime is a node program which returns current time and weather
+## weathertime is a node CLI program which returns current time and weather
 
 ### **How to run**
 - Clone the repo
